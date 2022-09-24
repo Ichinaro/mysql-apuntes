@@ -1,0 +1,8 @@
+ORDER BY
+    -> se usa para generar un orden alfabetico o numérico
+    -> La opciones permitidas son: ASC, DESC
+BETWEEN
+    -> Trae un rango de elementos
+
+COUNT
+    -> Obtiene el total de resgistros en una tabla

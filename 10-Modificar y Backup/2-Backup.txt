@@ -1,0 +1,16 @@
+-> En caso de tener un hosing usamos: -h "Ip_hosting"
+-> ( | more ) Pagina el resultado
+-> ( > "archivo_name" ) Indica que guarda el resultado en un archivo "esquema.sql"
+
+/*----------------------------------RESPALDAR_DATOS_Y_ESQUEMA----------------------------------
+    1.- Salir de MySQL al pront
+    2.- mysqldump -u root -p "dataBase_name" | more;
+*/
+
+/*--------------------------------------RESPALDAR_ESQUEMA--------------------------------------
+    -> ( -d ) Indica que es sin datos
+    -- Solo versionar en git el esquema
+    
+    1.- Salir de MySQL al pront
+    2.- mysqldump -u root -p -d "dataBase_name" > esquema.sql;
+*/

@@ -1,0 +1,50 @@
+1.- Trae todos los datos de una tabla
+    -> SELECT * FROM "tabla_name";
+
+2.- Traer todos los datos de una columna
+    -> SELECT "colum_name" FROM "tabla_name";
+
+2.- Traer todos los datos de varias columnas
+    -> SELECT "colum_name", "colum_name", "colum_name" FROM "tabla_name";
+
+3.- LIMIT: Limita la cantidad de datos a traer
+    -> SELECT "colum_name" FROM "tabla_name" LIMIT 10;
+
+4.- WHERE: (CONDICIONAL) Trae datos con un valor específico
+    -> SELECT "colum_name" FROM "tabla_name" WHERE "colum_name" = "colum_value";
+
+5.- YEAR: (FUNCION) Trae solo el año de una fecha
+    -> SELECT YEAR("colum_name") FROM clients;
+
+6.- NOW: (FUNCION) Trae la fecha y hora actual
+    -> SELECT NOW();
+
+7.- YEAR NOW: (FUNCION) Traer solo el año de la fecha actual
+    -> SELECT YEAR NOW();
+
+8.- (OPERACIÓN) Restar años para obtener una edad
+    -> SELECT YEAR(NOW()) - YEAR("colum_name") FROM clients;
+        ** El nombrer de la columna se presentará como:
+        ** YEAR(NOW()) - YEAR("colum_name")
+
+9.- AS: Usa un alias para el nombre de una columna
+    -> SELECT YEAR(NOW()) - YEAR("colum_name") AS edad FROM clients;
+
+10.- LIKE: (FUNCION) busca un dato por cernanía de texto
+    -- El signo ' % ' dependiendo donde se soloque puede significar que
+        no importa el texto anterior o posterior a lo indicado
+    -> SELECT * from clients where name LIKE '%Saave%';
+
+11.- RAND(): Aleatorio
+    -- Realizamos un orden Aleatorio
+    -> SELECT * FROM authors ORDER BY RAND() LIMIT 10;
+
+11.- NOT IN(): Seleciona valores que no incluya lo que pasemos por parámetro
+
+12.- <>: Simbolo de diferente
+    -- Seleciona los nombres de clientes donde active es diferente a 1
+    -> SELECT name FROM clients WHERE active <> 1;
+
+13.- OR: Se usa para indicar a un primer o segundo dato
+    -> SELECT name FROM authors WHERE author_id = 1 OR author_id = 5;
+

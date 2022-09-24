@@ -1,0 +1,27 @@
+/*--------------------------------------UPDATE----------------------------------
+    /*--------------------------------ESTRUCUTRA--------------------------------
+        !! Siempre usa WHERE para evitar que los cambios se realizen en toda la tabla
+
+        UPDATE "tabla_name"
+        SET ["columna" = "valor", ...]
+        WHERE [condiciones]
+        LIMIT 1;
+    */
+
+    /*--------------------------------UPDATE_UNO--------------------------------
+        UPDATE clients
+        SET active= 0
+        WHERE client_id = 80
+        LIMIT 1;
+    */
+
+    /*--------------------------------UPDATE_VARIOS-----------------------------
+        -- Actualiza a los que tengan ese id y tambien a los que se tenga 'Lopez'
+
+        UPDATE clients
+        SET active= 0
+        WHERE client_id IN (1, 6, 8, 27, 90)
+        OR name LIKE '%Lopez%'
+    */
+    
+*/

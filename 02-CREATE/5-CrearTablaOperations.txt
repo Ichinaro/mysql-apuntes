@@ -1,0 +1,9 @@
+CREATE TABLE `transactions` (
+  `transaction_id`      INTEGER unsigned NOT NULL AUTO_INCREMENT,
+  `book_id`             INTEGER unsigned NOT NULL,
+  `client_id`           INTEGER unsigned NOT NULL,
+  `type`                enum('lend', 'returned', 'sell') NOT NULL,
+  `created_at`          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified_at`         timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `finished`            TINYINT(1) NOT NULL DEFAULT '0'
+)

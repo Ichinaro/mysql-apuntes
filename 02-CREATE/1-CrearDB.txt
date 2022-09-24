@@ -1,0 +1,8 @@
+----------------------------------CREAR_DB----------------------------------
+- Crea la db "nombre_db"
+  (Si la base de datos existe muestra un error)
+    CREATE database nombre_db;
+
+- Crea la db "nombre_db" si no existe
+  (Si la base de datos existe muestra un warning)
+    CREATE DATABASE IF NOT EXISTS nombre_db;

@@ -1,0 +1,8 @@
+/*-------------------------------------DELETE------------------------------------
+    -- Usamos LIMIT 1 para asegurarnos que solo elimine uno en caso que el id se repita
+
+    DELETE FROM authors
+    WHERE author_id = 161
+    LIMIT 1;
+
+*/

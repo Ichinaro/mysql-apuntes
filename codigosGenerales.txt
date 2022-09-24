@@ -1,0 +1,27 @@
+--------------------------------------CODIGOS--------------------------------------
+0.- Ver advertencias
+    SHOW warnings;
+1.- Muestra todas las base de datos
+    show databases;
+2.- Usar una base de datos
+    use "DB-name";
+3.- Mostrar las tablas de una DB
+    show tables;
+4.- Muestra la base de datos que estamos usando
+    select database();
+5.- Eliminar tabla (no hay forma de recuperación)
+    drop table "table_name"
+6.- Ver estructura de una tabla
+    describe "table_name";
+    desc "table_name"; (forma recortada)
+7.- Ver estructura completa de una tabla
+    show full columns from "table_name";
+8.- Ver todos los datos de una tabla
+    select * from "table_name"
+9.- Buscar específico de una tabla por valor de columna
+    select * from "table_name" where "colum_name" = "colum_value"
+    select * from "table_name" where "colum_name" = "colum_value"\G
+10.- Ignorar errores o advertencias (NO USAR)
+    IGNORE ALL
+11.- TRUNCATE: Elimina el contenido de una tabla
+    TRUNCATE "tabla_name";

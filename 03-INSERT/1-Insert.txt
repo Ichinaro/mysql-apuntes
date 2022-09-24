@@ -1,0 +1,40 @@
+/*----------------------------------ESTRUCTURA----------------------------------
+    INSERT INTO "tabla_name"("columnas")
+    VALUES("VALORES");
+*/
+
+/*----------------------------------UNO A UNO-----------------------------------
+
+    /*--------------------------------FORMA_1-----------------------------------
+        -> Enviando un ID vacio
+
+        INSERT INTO authors(author_id, name, nationality)
+        VALUES('', 'Juan Rulfo', 'MEX');
+    */
+
+    /*--------------------------------FORMA_2-----------------------------------
+        -> Sin especificar ID
+
+        INSERT INTO authors(name, nationality)
+        VALUES('Gabriel García Márquez', 'COL');
+    */
+
+    /*--------------------------------FORMA_3-----------------------------------
+        -> Sin especificar columnas
+
+        INSERT INTO authors
+        VALUES('', 'Juan Gabriel Vasquez', 'COL');
+    */
+*/
+
+/*--------------------------------VARIOS A LA VEZ-------------------------------
+    -> Para indicar otro valor usamos ' , '
+    -> Para indicar que finaliza usamos ' ; '
+
+    INSERT INTO authors(name, nationality)
+    VALUES
+    ('Julio Cortázar', 'ARG'),
+    ('Isabel Allende', 'CHI'),
+    ('Juan Carlos Onetti', 'URU'),
+    ('Octavio Paz', 'MEX');
+*/

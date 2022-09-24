@@ -1,0 +1,4 @@
+----------------------------------INICIAR-CONSOLA----------------------------------
+1.- cd C:\Program Files\MySQL\MySQL Workbench 8.0
+2.- mysql -u root -h localhost
+

@@ -1,0 +1,47 @@
+/*----------------------------------LEFT_JOIN----------------------------------
+    ORDER BY Ordena los datos de una columna
+    DESC: Espeificamos que el orden sea Desendente
+    ASC: Especificamos que el orden sea Asccendente (No es necesario colocarlo)
+
+    /*------------------------------SIN_LEFT_JOIN------------------------------
+        -- Trae los datos que tengan relación entre tablas
+        -- Si no existe una relación NO muestra el dato
+
+        SELECT a.author_id, a.name a.natinality, b.title
+        FROM authors AS a
+        JOIN books AS b
+            ON b.author_id = a.author_id
+        WHERE a.author_id BETWEEN 1 AND 5
+        ORDER BY a.name DESC;
+    */
+
+    /*------------------------------CON_LEFT_JOIN------------------------------
+        -- Trae los datos que tengan relación entre tablas
+        -- Si no existe una relación muestra un NULL en el dato no enontrado
+
+        SELECT a.author_id, a.name a.natinality, b.title
+        FROM authors AS a
+        LEFT JOIN books AS b
+            ON b.author_id = a.author_id
+        WHERE a.author_id BETWEEN 1 AND 5
+        ORDER BY a.name DESC;
+    */
+
+*/
+
+/*-----------------------------------FUNCIONES---------------------------------
+
+    /*---------------------------------COUNT-----------------------------------
+        -- Ver cantidad de libros de un Author
+        -> GROUP BY: Agrupa la cantidad de liros por "a.author_id"
+
+        SELECT a.author_id, a.name a.natinality, COUNT(b.book_id)
+        FROM authors AS a
+        LEFT JOIN books AS b
+            ON b.author_id = a.author_id
+        WHERE a.author_id BETWEEN 1 AND 5
+        GROUP BY a.author_id
+        ORDER BY a.name DESC;
+    */     
+
+*/

@@ -1,0 +1,17 @@
+UNIQUE: indica que el valor no debe repetirse en otra fila o tupla
+ENUM: indica que valores puede tener el campo
+DATETIME: Se usa para fechas yyyy/mm/dd
+TIMESTAMP: guarda los segundos desde 1970 hasta hoy
+CURRENT_TIMESTAMP: toma por defecto la hora de la computadora
+ON UPDATE CURRENT_TIMESTAMP: solo cuando se actualice toma la hora del computador
+
+CREATE TABLE clients (
+    client_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    birthdate DATETIME,
+    gender ENUM('M', 'F', 'ND') NOT NULL,
+    active TINYINT(1) NOT NULL DEFAULT 1,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, 
+    updated_At TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);

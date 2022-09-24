@@ -1,0 +1,56 @@
+/*  1.- COUNT: Obtener el total de resgistros en una tabla
+        -> SELECT COUNT(*) FROM "tabla_name";
+*/
+
+/*  2.- Traer un rango de elementos
+
+    (CONDICIONAL)
+    -> SELECT * FROM "tabla_name" 
+    WHERE "colum_name_id" > 0 AND "colum_name_id" <= 5;
+
+    (BETWEEN)
+    -> SELECT * FROM "tabla_name" 
+    WHERE "colum_name_id" BETWEEN 1 AND 5;
+*/
+
+/*----------------------------------JOIN----------------------------------
+    -> JOIN: se usa para relacionar una tabla con la tabla declarada en FROM
+    -> ON: Vincula el valor de las columnas que se relacionan
+
+    SELECT b.book_id, a.name, b.title
+    FROM books AS b
+    JOIN authors AS a
+    ON a.author_id = b.author_id
+    WHERE a.author_id BETWEEN 1 AND 5
+*/
+
+/*--------------------------------VARIOS_JOIN------------------------------
+    /*Multiples JOIN
+        SELECT c.name, b.title, a.name, c.title
+        FROM transaction AS t
+        JOIN books AS b
+            ON t.book_id = b.book_id
+        JOIN clients AS c
+            ON t.client = c.client_id
+        JOIN authors AS a
+            ON b.author_id = a.author_id
+        WHERE c.gender = 'F'
+        AND t.type = 'sell';
+    */
+
+    /* Usando el método ( IN )
+        -> IN permite hacer una busqueda de varias opciones
+
+        SELECT c.name, b.title, a.name, c.title
+        FROM transaction AS t
+        JOIN books AS b
+            ON t.book_id = b.book_id
+        JOIN clients AS c
+            ON t.client = c.client_id
+        JOIN authors AS a
+            ON b.author_id = a.author_id
+        WHERE c.gender = 'F'
+        AND t.type IN('sell', 'lend');
+    */
+*/
+

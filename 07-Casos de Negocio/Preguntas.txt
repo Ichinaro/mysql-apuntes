@@ -1,0 +1,65 @@
+¿Que nacionalidades hay?
+    -> DISTINCT muestra valores sin repetirlos
+    SELECT DISTINCT natinality
+    FROM authors
+    ORDER BY natinality DESC;
+
+¿Cuantos escritores hay de cada nacionalidad?
+    -> IS NOT NULL: Indica que no triga los valores con NULL
+    -> IS NULL: Indica que traiga los valores con NULL
+    -> NOT IN: NO INcluye los valores pasados por parámetro ('RUS', AUT)
+    -> IN: INcluye solo los valores pasados por parámetro
+
+    SELECT natinality, COUNT(author_id) AS c_authors
+    FROM authors
+    WHERE nationality IS NOT NULL
+    AND natinality NOT IN('RUS', AUT)
+    GROUP BY natinality;
+    ORDER BY c_authors DESC, natinality ASC;
+
+¿Cuantos libros hay de cada nacionalidad?
+    SELECT COUNT(book_id)
+    FROM books AS b
+    LEFT JOIN authors AS a
+    GROUP BY a.natinality;
+
+¿Cual es el promedio/desviación standard del precio de libro?
+    -> AVG : Promedio
+    -> STDDEV: Desviación estandar
+
+    SELECT nationality,
+    COUNT(book_id) AS libros,
+    AVG(price) AS prom,
+    STDDEV(price) AS std
+    FROM books AS b
+    JOIN authors AS a
+    ON a.author_id = b.author_id
+    GROUP BY nationality
+    ORDER BY libros DESC
+
+¿Cual es el precio máximo/minimo de un libro?
+
+    -> MAX: Trae el valor mayor
+    -> MIN: Trae el valor menor
+    -- No es necesario especificar a.nationality por que la colunma solo se encuenra en una tabla
+    
+    SELECT nationality, MAX(price), MIN(price)
+    FROM books AS b
+    JOIN authors AS a
+    ON a.author_id = b.author_id
+    GROUP BY nationality
+
+¿Cómo quedaría el reporte de préstamos?
+    -> CONCAT: concatena valores de tipo texto
+    -> TO_DAYS: Indica los días que han pasado desde el día 0 hasta la indicada en el parámetro
+    
+    SELECT c.name, t.type, b.title,
+    CONCAT(a.name, " (", a.nationality, ")") AS autor,
+    TO_DAYS(NOW()) - TO_DAYS(t.created_at) AS ago
+    FROM transactions AS t
+    LEFT JOIN clients AS c
+    ON c.client_id = t.client_id
+    LEFT JOIN books  AS b
+    ON b.book_id = t.book_id
+    LEFT JOIN authors AS a
+    ON b.author_id = a.author_id

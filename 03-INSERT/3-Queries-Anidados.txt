@@ -1,0 +1,27 @@
+
+-- Los Queries anidados o subqueries duplican el tiempo del poceso a realizar
+-- Es preferible manejar los subqueries en una otra capa de negocio
+
+/*--------------------------------------SIN_QUERIE_ANIDADO--------------------------------------
+    -> Pasamos el ID del autor manualmente
+
+    INSERT INTO books(tittle, author_id, `year`)
+    VALUES(
+        'El laberinto de la soledad',
+        6,
+        1990
+    );
+*/
+
+/*--------------------------------------CON_QUERIE_ANIDADO--------------------------------------
+
+    -> SELECT: tremos el ID del author
+    -> LIMIT: Limitamos a 1 author en caso se existir varios
+
+    INSERT INTO books(tittle, author_id, `year`)
+    VALUES(
+        'El laberinto de la soledad',
+        (SELECT author_id FROM authors WHERE name = 'Octavio Paz' LIMIT 1),
+        1990
+    );
+*/s

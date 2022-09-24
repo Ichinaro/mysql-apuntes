@@ -1,0 +1,8 @@
+1.- En la terminal nos dirigimos a la ruta de nuestros archivos
+
+2.- Creando esquema: mysql -u root -p < all_schema.sql
+    -> Con nuestro hosting es el localhos no necesitamos especificar -h
+    -> El signo ' < ' indica que le vamos a parasar a MySQL un archivo
+
+3.- Pasamos información: mysql -u root -p -D "database_name" < all_data.sql
+    -> Con -D indicamos el nombre de la base de datos a enviar la información

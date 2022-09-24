@@ -1,0 +1,33 @@
+/*----------------------------------CREAR_TABLAS----------------------------------
+    - Crea una tabla si no existe
+        CREATE TABLE IF NOT EXISTS authors();
+/*
+
+/*------------------------------------CREAR_ID------------------------------------
+    - nombre del ID: "author_id";
+        author_id
+    - Tipo de dato
+        author_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+*/
+
+/*----------------------------------CREAR_NOMBRE----------------------------------
+    - nombre de columna: "name";
+        name
+    - Tipo de dato
+        name VARCHAR(100) NOT NULL,
+*/
+
+/*--------------------------------CREAR_NACIONALIDAD------------------------------
+    - nombre del ID: "nationality";
+        nationality
+    - Tipo de dato
+        nationality VARCHAR(3),
+*/
+
+/*--------------------------------------FINAL-------------------------------------
+    CREATE TABLE IF NOT EXISTS `authors`(
+        author_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+        name VARCHAR(100) NOT NULL,
+        nationality VARCHAR(3)
+    );
+*/

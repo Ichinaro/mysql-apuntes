@@ -1,0 +1,51 @@
+/*----------------------------------SUM()----------------------------------
+    -- Se usa para sumar valores en cada iteración
+
+    ** Cantidad de libros por titulo a la venta
+    SELECT SUM(1)
+    FROM books where sellable = 1;
+
+    ** Valor total de libros a la venta
+    SELECT SUM(price*copies)
+    FROM books where sellable = 1;
+
+    ** Valor total de libros a la venta y no venta
+    SELECT SUM(price*copies)
+    FROM books GROUP BY sellable;
+*/
+
+/*-------------------------------CONDICION_IF-------------------------------
+    ** Estructura
+    SELECT COUNT(book_id), 
+    SUM(if("condicion", "value_true", "value_false"))
+
+    ** Uso 1
+    SELECT COUNT(book_id), 
+    SUM(if(year < 1950 , 1, 0)) AS `<1950`
+    FROM books;
+
+    ** Comprobar
+    SELECT COUNT(book_id)
+    FROM books
+    WHERE year < 1950;
+
+    ** Uso 2
+    SELECT COUNT(book_id), 
+    SUM(if(year < 1950 , 1, 0)) AS `<1950`,
+    SUM(if(year >= 1950 AND year < 1990, 1, 0)) AS `<1990`,
+    SUM(if(year >= 1990 AND year < 2000, 1, 0)) AS `<2000`,
+    SUM(if(year >= 2000 , 1, 0)) AS `<hoy`
+    FROM books;
+
+    ** Uso 3
+    SELECT nationality, COUNT(book_id), 
+    SUM(if(year < 1950 , 1, 0)) AS `<1950`,
+    SUM(if(year >= 1950 AND year < 1990, 1, 0)) AS `<1990`,
+    SUM(if(year >= 1990 AND year < 2000, 1, 0)) AS `<2000`,
+    SUM(if(year >= 2000 , 1, 0)) AS `<hoy`
+    FROM books AS b
+    JOIN authos AS a
+    ON a.author_id = b.author_id
+    WHERE a.nationality IS NOT NULL
+    GROUP BY nationality;
+*/

@@ -1,0 +1,23 @@
+
+-> En la tabla de `clients` indicamos que no se pueden crear clientes con el email repetido
+
+/*---------------------------------------ON DUPLICATE KEY---------------------------------------
+
+    -> Se usa para realizar una accion en caso de que una tupla ya esté registrada
+    -> UPDATE: Accion a realizar
+    -> active = VALUES(active): Valor a modificar
+
+    INSERT INTO `clients`(name, email, birthdate, gender, active)
+    VALUES('Pedro Sanchez', 'pedro@mail.com', '2000-01-28', 'M', 0);
+    ON DUPLICATE KEY UPDATE active = VALUES(active);
+*/
+
+/*------------------------------------------IGNORE ALL------------------------------------------
+
+    -> Ejecuta el INSERT ignorando los errores o advertencias
+    -> NO SE RECOMIENDA USAR
+
+    INSERT INTO `clients`(name, email, birthdate, gender, active)
+    VALUES('Pedro Sanchez', 'pedro@mail.com', '2000-01-28', 'M', 0);
+    ON DUPLICATE KEY IGNORE ALL;
+*/

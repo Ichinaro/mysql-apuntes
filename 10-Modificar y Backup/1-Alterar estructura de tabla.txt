@@ -1,0 +1,10 @@
+1.- AGREGAR COLUMNA
+    --ALTER: Altera la estructura de una base de datos
+    ALTER TABLE authors ADD COLUMN birthyear INTEGER DEFAULT 1930 AFTER name;
+
+2.- MODIFICAR COLUMNA
+    ** Modificamos es typo de datos que recibe la columna birthyear
+    ALTER TABLE authors MODIFY COLUMN birthyear year DEFAULT 1920;
+
+3.- ELIMINAR COLUMNA
+    ALTER TABLE authors DROP COLUMN birthyear;

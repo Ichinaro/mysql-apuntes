@@ -1,0 +1,149 @@
+/*----------------------------------CREAR_TABLAS----------------------------------
+    - Crea una tabla
+        CREATE TABLE books();
+
+    - Crea una tabla si no existe
+        CREATE TABLE IF NOT EXISTS books();
+*/
+/*----------------------------------CREAR_ID----------------------------------
+    - nombre del ID: "book_id";
+        book_id
+
+    - Indicamos que es un ENTERO
+        book_id INTEGER,
+
+    - Indicamos que solo guarde numeros positivos
+        book_id INTEGER UNSIGNED,
+
+    - La manejamos como llave primaria CLAVE-VALOR y se AUTOINCREMENTA
+        book_id INTEGER PRIMARY KEY,
+
+    - La hacemos AUTOINCREMENTAl
+        book_id INTEGER PRIMARY AUTO_INCREMENT,
+*/
+/*----------------------------------CREAR_COLUMNAS----------------------------------
+
+    /*-------------------------------------COLUMNA_1------------------------------------
+        - nombre de la columna: "title"
+            title,
+
+        - Indicamos que el tipo de texto: VARCHAR()
+            -> indicar la cantidad de caracteres a guardar VARCHAR(100)
+            -> NOTA: VARCHAR() solo guarda un máximo de 8000 caracteres
+            title VARCHAR(100),
+
+        - Validamos para que no se guarden datos NULL
+            -> un dato null es: varName;
+            -> un dato vacio es: varName = "";
+            title VARCHAR(100) NOT NULL,
+    /*
+    /*-------------------------------------COLUMNA_2------------------------------------
+        - nombre de la columna: "year"
+            -> Colocamos comillas invertidas para evitar problemas con la palabra reservada
+            `year`,
+
+        - Tipo de dato
+            `year` INTEGER,
+
+        - Validamos que sean numeros positivos
+            `year` INTEGER UNSIGNED,
+
+        - Validamos que no guarde NULL
+            `year` INTEGER NOT NULL,
+
+        - Indicamos un valor por defecto "1900" en caso de NULL
+            `year` INTEGER NOT NULL DEFAULT 1900,
+    /*
+    /*-------------------------------------COLUMNA_3------------------------------------
+        - nombre de la columna: "language"
+            -> Colocamos comillas invertidas para evitar problemas con la palabra reservada
+            `language`,
+
+        - Tipo de dato
+            `language` VARCHAR(2)
+
+        - Validamos que no guarde NULL
+            `language` VARCHAR(2) NOT NULL
+
+        - Indicamos un valor por defecto: 'es'
+            `language` VARCHAR(2) NOT NULL DEFAULT 'es'
+
+        - Añadimos comentario: 'ISO 639-1 Language'
+            `language` VARCHAR(2) NOT NULL DEFAULT 'es' COMMENT 'ISO 639-1 Language',
+    /*
+    /*-------------------------------------COLUMNA_4------------------------------------
+        - nombre de la columna: "cover_url"
+            cover_url,
+
+        - Tipo de dato
+            cover_url VARCHAR(500),
+    /*
+    /*-------------------------------------COLUMNA_5------------------------------------
+        - nombre de la columna: "price"
+            price,
+
+        - Tipo de dato
+            -> DOUBLE(enteros, decimales)
+            price DOUBLE(6,2)
+
+        - Validamos que no guarde NULL
+            price DOUBLE(6,2) NOT NULL
+
+        - Indicamos un valor por defecto: '10.0'
+        price DOUBLE(6,2) NOT NULL DEFAULT 10.0,
+    */
+    /*-------------------------------------COLUMNA_6------------------------------------
+        --BANDERAS--
+
+        - nombre de la columna: "sellable"
+            sellable,
+
+        - Tipo de dato TINYINT()
+            -> Indicamos la canditdad de Bytes TINYINT(1)
+            -> (1) puede tener 1 o 0 (true o false)
+            sellable TINYINT(1)
+
+        - Indicamos un valor por defecto: '1'
+            sellable TINYINT(1) DEFAULT 1,
+    */
+    /*-------------------------------------COLUMNA_7------------------------------------
+        - nombre de la columna: "copies"
+            copies,
+
+        - Tipo de dato
+            copies INTEGER
+
+        - Validamos que no guarde NULL
+            copies INTEGER NOT NULL
+
+        - Indicamos un valor por defecto: '1'
+            copies INTEGER NOT NULL DEFAULT 1,
+    */
+    /*-------------------------------------COLUMNA_8------------------------------------
+        - nombre de la columna: "description"
+            description,
+
+        - Tipo de dato TEXT (no hay un limite de caracteres)
+            description TEXT,
+    */
+    /*-------------------------------------COLUMNA_9------------------------------------
+        - nombre de la columna: "author"
+            author_id,
+        - Tipo de dato
+            author_id INTEGER UNSIGNED,
+    */
+*/
+/*---------------------------------------FINAL--------------------------------------
+    CREATE TABLE IF NOT EXISTS `books`(
+        book_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+        author_id INTEGER UNSIGNED,
+        title VARCHAR(100) NOT NULL,
+        `year` INTEGER NOT NULL DEFAULT 1900,
+        `language` VARCHAR(2) NOT NULL DEFAULT 'es' COMMENT 'ISO 639-1 Language',
+        cover_url VARCHAR(500),
+        price DOUBLE(6,2) NOT NULL DEFAULT 10.0,
+        sellable TINYINT(1) DEFAULT '1',
+        copies INTEGER NOT NULL DEFAULT 1,
+        description TEXT
+    );
+*/
